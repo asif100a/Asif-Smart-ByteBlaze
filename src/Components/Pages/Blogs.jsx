@@ -33,7 +33,7 @@ const Blogs = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 mt-16">
+            <div className="grid grid-cols-3 gap-6 my-16">
                 {
                     blogs.slice(1, blogs.length).map(blog => <Blog key={blog.id} blog={blog}></Blog>)
                 }

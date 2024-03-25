@@ -9,6 +9,7 @@ import Home from './Components/Pages/Home';
 import Root from './Components/Root/Root';
 import Blogs from './Components/Pages/Blogs';
 import Bookmarks from './Components/Pages/Bookmarks';
+import BlogDetails from './Components/Pages/BlogDetails';
 
 const router = createBrowserRouter([
   {
@@ -25,9 +26,15 @@ const router = createBrowserRouter([
         loader: () => fetch('https://dev.to/api/articles?per_page=25&top=10'),
       },
       {
+        path: '/details/:id',
+        element: <BlogDetails></BlogDetails>,
+        loader: ({params}) => fetch(`https://dev.to/api/articles/${params.id}`)
+      },
+      {
         path: '/bookmarks',
         element: <Bookmarks></Bookmarks>
-      }
+      },
+      
     ]
   }
 ]);

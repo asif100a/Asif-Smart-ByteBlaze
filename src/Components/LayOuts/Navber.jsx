@@ -17,6 +17,22 @@ const Navber = () => {
         }
     };
 
+    // const activeStyle = {
+        
+    // };
+
+    const links = <>
+        <li className="flex">
+            <NavLink to={`/`} className="flex items-center px-4 active:text-secondary">Home</NavLink>
+        </li>
+        <li className="flex">
+            <NavLink to={'/blogs'} className="flex items-center px-4 active:text-secondary">Blogs</NavLink>
+        </li>
+        <li className="flex">
+            <NavLink to={"/bookmarks"} className="flex items-center px-4 active:text-secondary">Bookmarks</NavLink>
+        </li>
+    </>;
+
     return (
         <header className="dark:bg-white shadow-lg text-[#111111]">
             <div className="container flex justify-between h-16 mx-auto">
@@ -27,15 +43,7 @@ const Navber = () => {
                 </div>
                 <div className="flex gap-6 justify-center items-center mx-4">
                     <ul className="items-stretch font-bold hidden space-x-1 md:flex">
-                        <li className="flex">
-                            <NavLink to={`/`} rel="noopener noreferrer" href="#" className="flex items-center px-4">Home</NavLink>
-                        </li>
-                        <li className="flex">
-                            <NavLink to={'/blogs'} rel="noopener noreferrer" href="#" className="flex items-center px-4">Blogs</NavLink>
-                        </li>
-                        <li className="flex">
-                            <NavLink to={"/bookmarks"} rel="noopener noreferrer" href="#" className="flex items-center px-4 dark:text-violet-600 dark:border-violet-600">Bookmarks</NavLink>
-                        </li>
+                        {links}
                     </ul>
                     <div>
                         <label onChange={hanleDayNightMode} className="flex cursor-pointer gap-2">

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { Link, NavLink } from 'react-router-dom';
 
-const Blog = ({blog}) => {
-    const {cover_image,title, description, published_timestamp} = blog;
+const Blog = ({ blog }) => {
+    const { id, cover_image, title, description, published_timestamp } = blog;
 
     const timestamp = (time) => {
         const blogTime = new Date(time);
@@ -16,19 +17,22 @@ const Blog = ({blog}) => {
         };
         return blogTime.toLocaleString('en-US', options);
     };
-    const blogDateTime = timestamp(published_timestamp)
+    const blogDateTime = timestamp(published_timestamp);
+
 
     return (
-        <div className='p-6 border-2 mx-auto rounded-md'>
-            <div className=' h-[24rem]'>
-                <img className='rounded-[4px]' src={cover_image} alt="cover image" />
-                <div>
-                    <h1 className='text-2xl font-medium'>{title}</h1>
-                    <p className='mt-auto mb-4'><small>{blogDateTime}</small></p>
-                    <p>{description}</p>
+        <NavLink to={`/details/${id}`}>
+            <div className='p-6 border-2 mx-auto rounded-md hover:cursor-pointer hover:scale-[1.05] hover:border-secondary'>
+                <div className=' h-[24rem]'>
+                    <img className='rounded-[4px]' src={cover_image} alt="cover image" />
+                    <div>
+                        <h1 className='text-2xl font-medium hover:underline'>{title}</h1>
+                        <p className='mt-auto mb-4'><small>{blogDateTime}</small></p>
+                        <p>{description}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </NavLink>
     );
 };
 
