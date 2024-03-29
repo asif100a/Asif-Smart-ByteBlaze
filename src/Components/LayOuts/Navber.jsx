@@ -37,7 +37,7 @@ const Navber = () => {
         <header className="dark:bg-white shadow-lg text-[#111111]">
             <div className="container flex justify-between h-16 mx-auto">
                 <div className="flex justify-center items-center">
-                    <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2 btn bg-white shadow-none text-2xl ml-4 text-secondary">
+                    <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2 btn bg-white shadow-none border-2 border-white text-2xl ml-4 text-secondary">
                         Smart <span className="text-primary">Byteblaze</span>
                     </a>
                 </div>

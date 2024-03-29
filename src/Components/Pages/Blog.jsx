@@ -21,7 +21,7 @@ const Blog = ({ blog }) => {
 
 
     return (
-        <NavLink to={`/details/${id}`}>
+        <NavLink to={`/details/${id}`} state={title}>
             <div className='p-6 border-2 mx-auto rounded-md hover:cursor-pointer hover:scale-[1.05] hover:border-secondary'>
                 <div className=' h-[24rem]'>
                     <img className='rounded-[4px]' src={cover_image} alt="cover image" />
